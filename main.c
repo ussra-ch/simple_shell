@@ -13,7 +13,8 @@ int main(int argc, char **argv)
 	char *line = NULL;
 	char **commandArgs = NULL;
 	int exitStatus = 0;
-	(void) argc;
+
+	(void) argc; /* To avoid unused variable warning */
 
 	while (1)
 	{
@@ -22,20 +23,15 @@ int main(int argc, char **argv)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
+			free(line);
 			return (exitStatus);
 		}
-
 		commandArgs = split_line(line);
 		if (!commandArgs)
-		{
-			free(line);
 			continue;
-		}
-
 		exitStatus = execute_command(commandArgs, argv);
 
 		free(line);
-		free_arr(commandArgs);
 	}
 	return (0);
 }
