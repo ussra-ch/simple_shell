@@ -20,7 +20,22 @@ char **split_line(char *line);
 void free_arr(char **arr);
 int execute_command(char **command, char **argv);
 
-/* All strings */
+/* All strings needs */
+int shell_strlen(char *s);
+int shell_strcmp(char *s1, char *s2);
+char *starts_with(const char *haystack, const char *needle);
+char *shell_strcat(char *dest, char *src);
 
+char *shell_strcpy(char *dest, char *src);
+char *shell_strdup(const char *str);
+void shell_puts(char *str);
+int shell_putchar(char c);
+
+char *shell_strncpy(char *dest, char *src, int n);
+char *shell_strncat(char *dest, char *src, int n);
+char *shell_strchr(char *s, char c);
+
+char **strtow(char *str, char *d);
+char **strtow2(char *str, char d);
 
 #endif
