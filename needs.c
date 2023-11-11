@@ -4,7 +4,6 @@
  * free_arr - function frees 2D arrays
  * @arr: input
  */
-
 void free_arr(char **arr)
 {
 	int i = 0;
@@ -18,6 +17,7 @@ void free_arr(char **arr)
 	}
 	free(arr);
 }
+
 /**
  * shell_strdup - duplicate a string
  * @str: the input
@@ -38,6 +38,7 @@ char *shell_strdup(const char *str)
 			ptr[i] = str[i];
 	return (ptr);
 }
+
 /**
  * shell_strcmp - compares to strings
  * @str1: the first input
@@ -46,7 +47,6 @@ char *shell_strdup(const char *str)
 */
 int shell_strcmp(char *str1, char *str2)
 {
-	int r;
 	while (*str1 && (*str1 == *str2))
 	{
 		str1++;
@@ -71,10 +71,38 @@ int shell_strlen(char *str)
 	return (len);
 }
 
+/**
+ * shell_strcat - concatenate two strings
+ * @str1: first input
+ * @str2: second input
+ * Return: ptr to the new variable
+*/
+char *shell_strcat(char *str1, char *str2)
+{
+	int i = 0, j = 0, len1 = 0, len2 = 0;
 
+	char *r;
 
-
-
+	while (str1[len1])
+		len1++;
+	while (str2[len2])
+		len2++;
+	r = malloc(sizeof(char) * (len1 + len2));
+	if (r == NULL)
+		return (NULL);
+	while (str1[i] != '\0')
+	{
+		r[i] = str1[i];
+		i++;
+	}
+	while (str2[j] != '\0')
+	{
+		r[i] = str2[j];
+		i++, j++;
+	}
+	r[i] = '\0';
+	return (r);
+}
 
 
 
