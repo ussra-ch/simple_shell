@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * execute_command - function that execute the commands
  * @commandArgs: array of string reprsenting the command given
@@ -9,9 +10,12 @@
 int execute_command(char **commandArgs, char **argv)
 {
 	pid_t child;
+
 	int status;
 
+
 	if (commandArgs == NULL || argv == NULL)
+
 		return (-1);
 
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
@@ -26,6 +30,7 @@ int execute_command(char **commandArgs, char **argv)
 		{
 			perror(argv[0]);
 			free_arr(commandArgs);
+
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -35,6 +40,7 @@ int execute_command(char **commandArgs, char **argv)
 		{
 			perror("waitpid");
 			return (-1);
+
 		}
 		return (WEXITSTATUS(status));
 	}
@@ -45,3 +51,4 @@ int execute_command(char **commandArgs, char **argv)
 	}
 	return (-1);
 }
+

@@ -8,13 +8,12 @@
  * Return: 0 Always (success)
  */
 
-int main(int argc, char **argv)
+int main(int argc, char **argv) /*the same as they did in alx */
 {
 	char *line = NULL;
 	char **commandArgs = NULL;
 	int exitStatus = 0;
-
-	(void) argc; /* To avoid unused variable warning */
+	(void) argc;
 
 	while (1)
 	{
