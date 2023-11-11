@@ -50,4 +50,3 @@ char **split_line(char *line)
         free(line), free(token);
         return (command);
 }
-}

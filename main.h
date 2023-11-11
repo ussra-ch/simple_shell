@@ -15,6 +15,7 @@
 extern char **environ;
 
 /* All prototypes */
+/* task 1&2 functions */
 char *get_input_line(void);
 char **split_line(char *line);
 void free_arr(char **arr);
@@ -37,5 +38,8 @@ char *shell_strchr(char *s, char c);
 
 char **strtow(char *str, char *d);
 char **strtow2(char *str, char d);
+
+/* yousra's funtions*/
+char *_getenv(char *variable);
 
 #endif
