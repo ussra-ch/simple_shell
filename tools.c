@@ -53,23 +53,8 @@ void print_error(char *file_name, char *cmd, int i)
     write (STDERR_FILENO, ": ", 2);
     write (STDERR_FILENO, index, shell_strlen(index));
     write (STDERR_FILENO, ": ", 2);
-    write (STDERR_FILENO,  cmdf, shell_strlen(cmd));
+    write (STDERR_FILENO,  cmd, shell_strlen(cmd));
     write (STDERR_FILENO, msg, shell_strlen(msg));
 
     free(index);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

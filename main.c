@@ -28,10 +28,14 @@ int main(int argc, char **argv) /*the same as they did in alx */
 		idx++;
 		commandArgs = split_line(line);
 		if (!commandArgs)
+		{
+			free(line);
 			continue;
+		}
 		exitStatus = execute_command(commandArgs, argv, idx);
 
 		free(line);
+		free_arr(commandArgs);
 	}
 	return (0);
 }

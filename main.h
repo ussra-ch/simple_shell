@@ -21,14 +21,19 @@ char **split_line(char *line);
 void free_arr(char **arr);
 int execute_command(char **command, char **argv, int idx);
 
-/* All strings needs */
-int shell_strlen(char *s); //made
-int shell_strcmp(char *s1, char *s2); //made
-char *starts_with(const char *haystack, const char *needle);
-char *shell_strcat(char *dest, char *src); //made
+/* Helper prototype for the function split_line. Added by kaltoum */
+int count_tokens(char *str); /* made */
+char **allocate_char_array(int size); /* made */
+void free_char_array(char **arr, int size); /* made */
 
-char *shell_strcpy(char *dest, char *src); //made
-char *shell_strdup(const char *str); //made
+/* All strings needs */
+int shell_strlen(char *s); /* made */
+int shell_strcmp(char *s1, char *s2); /* made */
+char *starts_with(const char *haystack, const char *needle);
+char *shell_strcat(char *dest, char *src); /* made */
+
+char *shell_strcpy(char *dest, char *src); /* made */
+char *shell_strdup(const char *str); /* made */
 void shell_puts(char *str);
 int shell_putchar(char c);
 
@@ -36,8 +41,8 @@ char *shell_strncpy(char *dest, char *src, int n);
 char *shell_strncat(char *dest, char *src, int n);
 char *shell_strchr(char *s, char c);
 
-char **strtow(char *str, char *d);
-char **strtow2(char *str, char d);
+char **str_tokenize(char *str, const char *d);
+char **str_tokenize_single(char *str, char del);
 
 /* yousra's funtions*/
 char *_getenv(char *variable);
