@@ -19,16 +19,16 @@ extern char **environ;
 char *get_input_line(void);
 char **split_line(char *line);
 void free_arr(char **arr);
-int execute_command(char **command, char **argv);
+int execute_command(char **command, char **argv, int idx);
 
 /* All strings needs */
-int shell_strlen(char *s);
-int shell_strcmp(char *s1, char *s2);
+int shell_strlen(char *s); //made
+int shell_strcmp(char *s1, char *s2); //made
 char *starts_with(const char *haystack, const char *needle);
-char *shell_strcat(char *dest, char *src);
+char *shell_strcat(char *dest, char *src); //made
 
-char *shell_strcpy(char *dest, char *src);
-char *shell_strdup(const char *str);
+char *shell_strcpy(char *dest, char *src); //made
+char *shell_strdup(const char *str); //made
 void shell_puts(char *str);
 int shell_putchar(char c);
 
@@ -41,5 +41,9 @@ char **strtow2(char *str, char d);
 
 /* yousra's funtions*/
 char *_getenv(char *variable);
+char *_getpath(char *command);
+char *str_int(int n);
+void shell_reverse(char *str, int len);
+void print_error(char *file_name, char *cmd, int i);
 
 #endif

@@ -1,23 +1,4 @@
 #include "main.h"
-
-/**
- * free_arr - function frees 2D arrays
- * @arr: input
- */
-void free_arr(char **arr)
-{
-	int i = 0;
-
-	if (arr == NULL)
-		return;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
 /**
  * shell_strdup - duplicate a string
  * @str: the input
@@ -104,6 +85,24 @@ char *shell_strcat(char *str1, char *str2)
 	return (r);
 }
 
+/**
+ * shell_strcpy - copy one string to onother
+ * @src: string to be copied
+ * @dest: returned value
+ * 
+ * Return: ptr to dest 
+*/
+char *shell_strcpy(char *src, char *dest)
+{
+	int i = 0;
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
+}
 
 
 
