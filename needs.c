@@ -2,7 +2,7 @@
 /**
  * shell_strdup - duplicate a string
  * @str: the input
- * Return: ptr to the new string 
+ * Return: ptr to the new string
 */
 char *shell_strdup(const char *str)
 {
@@ -31,7 +31,8 @@ char *shell_strdup(const char *str)
  * shell_strcmp - compares to strings
  * @str1: the first input
  * @str2: the second input
- * Return: positive num if str1>str2, 0 is both are equal, negative num if str1<str2 
+ * Return: positive num if str1>str2, 0 is both
+ * are equal, negative num if str1<str2.
 */
 int shell_strcmp(char *str1, char *str2)
 {
@@ -96,8 +97,8 @@ char *shell_strcat(char *str1, char *str2)
  * shell_strcpy - copy one string to onother
  * @src: string to be copied
  * @dest: returned value
- * 
- * Return: ptr to dest 
+ *
+ * Return: ptr to dest
 */
 char *shell_strcpy(char *src, char *dest)
 {

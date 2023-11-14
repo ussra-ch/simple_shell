@@ -1,9 +1,12 @@
 #include "main.h"
-
+/**
+* split_line - function that sptilts the line into words
+* @line: ptr to the line
+* Return: ptr to a variable containing the words of the line given
+*/
 char **split_line(char *line)
 {
-	char *token = NULL, *tmp = NULL;
-	char **command = NULL;
+	char *token = NULL, *tmp = NULL, **command = NULL;
 	int count = 0, i = 0, j = 0;
 
 	if (line == NULL)
@@ -16,8 +19,7 @@ char **split_line(char *line)
 	}
 	while (token)
 	{
-		count++;
-		token = strtok(NULL, EX);
+		count++, token = strtok(NULL, EX);
 	}
 	command = malloc(sizeof(char *) * (count + 1));
 	if (command == NULL)
