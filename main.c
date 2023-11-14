@@ -25,11 +25,15 @@ int main(int argc, char **argv) /*the same as they did in alx */
 			free(line);
 			return (exitStatus);
 		}
+		if (strcmp(line, "exit") == 0)
+		{
+			free(line);
+			return (exitStatus);
+		}
 		idx++;
 		commandArgs = split_line(line);
 		if (!commandArgs)
 		{
-			free(line);
 			continue;
 		}
 		exitStatus = execute_command(commandArgs, argv, idx);

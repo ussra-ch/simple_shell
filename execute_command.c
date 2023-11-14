@@ -36,6 +36,13 @@ int execute_command(char **commandArgs, char **argv, int idx)
 	{
 		print_error(argv[0], commandArgs[0], idx);
 		free_arr(commandArgs);
+		return (-1);
+	}
+	/* Check if the entered command is "exit" */
+	if (shell_strcmp(commandArgs[0], "exit") == 0)
+	{
+		free(cmd);
+		free_arr(commandArgs);
 		return (0);
 	}
 	child = fork();

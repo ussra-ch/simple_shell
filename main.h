@@ -17,14 +17,15 @@ extern char **environ;
 /* All prototypes */
 /* task 1&2 functions */
 char *get_input_line(void);
-char **split_line(char *line);
 void free_arr(char **arr);
 int execute_command(char **command, char **argv, int idx);
 
-/* Helper prototype for the function split_line. Added by kaltoum */
-int count_tokens(char *str); /* made */
-char **allocate_char_array(int size); /* made */
-void free_char_array(char **arr, int size); /* made */
+/**
+* split_line - function that sptilts the line into words
+* @line: ptr to the line
+* Return: ptr to a variable containing the words of the line given
+*/
+char **split_line(char *line);
 
 /* All strings needs */
 int shell_strlen(char *s); /* made */

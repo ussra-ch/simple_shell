@@ -7,16 +7,23 @@
 char *shell_strdup(const char *str)
 {
 	char *ptr;
-
 	int i, len = 0;
 
 	if (str == NULL)
 		return (NULL);
+	/* Calculate the length of the string */
 	while (str[len])
 		len++;
-	ptr = malloc(sizeof(char) * (len + 1)); 
-	for (i = 0; i <= len; i++)
-			ptr[i] = str[i];
+	/* Allocate memory for the new string (+1 for null terminator) */
+	ptr = malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL)
+		return (NULL);
+	/* Copy characters from str to ptr */
+	for (i = 0; i < len; i++)
+		ptr[i] = str[i];
+	/* Add null terminator to the end of the duplicated string */
+	ptr[len] = '\0';
+
 	return (ptr);
 }
 
@@ -103,10 +110,3 @@ char *shell_strcpy(char *src, char *dest)
 	}
 	return (dest);
 }
-
-
-
-
-
-
-
