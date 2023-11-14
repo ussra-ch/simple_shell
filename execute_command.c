@@ -1,21 +1,5 @@
 #include "main.h"
-/**
- * free_arr - function frees 2D arrays
- * @arr: input
- */
-void free_arr(char **arr)
-{
-	int i = 0;
 
-	if (arr == NULL)
-		return;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
 /**
  * execute_command - function that execute the commands
  * @commandArgs: array of string reprsenting the command given
@@ -26,9 +10,7 @@ void free_arr(char **arr)
 int execute_command(char **commandArgs, char **argv, int idx)
 {
 	char *cmd;
-
 	pid_t child;
-
 	int status;
 
 	cmd = _getpath(commandArgs[0]);
@@ -68,3 +50,20 @@ int execute_command(char **commandArgs, char **argv, int idx)
 	return (-1);
 }
 
+/**
+ * free_arr - function frees 2D arrays
+ * @arr: input
+ */
+void free_arr(char **arr)
+{
+	int i = 0;
+
+	if (arr == NULL)
+		return;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
