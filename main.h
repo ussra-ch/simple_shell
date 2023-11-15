@@ -19,7 +19,7 @@ extern char **environ;
 char *get_input_line(void);
 char **split_line(char *line);
 void free_arr(char **arr);
-int execute_command(char **command, char **argv); /*rempved: int idx*/
+int execute_command(char **command, char **argv);/*, char **argv, int idx*/
 
 /* All strings needs */
 int shell_strlen(char *s); /* made */

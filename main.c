@@ -7,7 +7,7 @@
  *
  * Return: 0 Always (success)
  */
-int main(int argc, char **argv) /*the same as they did in alx */
+int main(int argc, char **argv)
 {
 	char *line = NULL;
 	char **commandArgs = NULL;
@@ -33,7 +33,7 @@ int main(int argc, char **argv) /*the same as they did in alx */
 		commandArgs = split_line(line);
 		if (!commandArgs)
 			continue;
-		exitStatus = execute_command(commandArgs, argv); /*removed :idx*/
+		exitStatus = execute_command(commandArgs, argv);/*, argv, idx*/
 		free(line);
 		free_arr(commandArgs);
 	}
