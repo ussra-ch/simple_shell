@@ -24,25 +24,22 @@ int execute_command(char **command, char **argv, int idx);
 /* All strings needs */
 int shell_strlen(char *s); /* made */
 int shell_strcmp(char *s1, char *s2); /* made */
-/*char *starts_with(const char *haystack, const char *needle);*/
+/* char *starts_with(const char *haystack, const char *needle); */
 char *shell_strcat(char *dest, char *src); /* made */
 
 char *shell_strcpy(char *dest, char *src); /* made */
 char *shell_strdup(const char *str); /* made */
-<<<<<<< HEAD
-/*void shell_puts(char *str);
+
+/*void shell_puts(char *str); */
 int shell_putchar(char c);
-=======
 /* void shell_puts(char *str); */
-/* int shell_putchar(char c); */
->>>>>>> a3df83e01b4e742745bcac2d7d6d24081d915d05
 
 char *shell_strncpy(char *dest, char *src, int n);
 char *shell_strncat(char *dest, char *src, int n);
 char *shell_strchr(char *s, char c);
 
 char **str_tokenize(char *str, const char *d);
-char **str_tokenize_single(char *str, char del);*/
+char **str_tokenize_single(char *str, char del);
 
 char *_getenv(char *variable);
 char *_getpath(char *command);

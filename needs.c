@@ -7,24 +7,17 @@
 */
 char *shell_strdup(const char *str)
 {
+	size_t len = strlen(str);
 	char *ptr;
-
-	int i, len = 0;
 
 	if (str == NULL)
 		return (NULL);
-	/* Calculate the length of the string */
-	while (str[len])
-		len++;
-	/* Allocate memory for the new string (+1 for null terminator) */
-	ptr = malloc(sizeof(char) * (len)); /*it was len+1*/
+
+	ptr = malloc((len + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	/* Copy characters from str to ptr */
-	for (i = 0; i < len; i++)
-		ptr[i] = str[i];
-	/* Add null terminator to the end of the duplicated string */
-	ptr[len] = '\0';
+	strcpy(ptr, str);
+
 	return (ptr);
 }
 
@@ -54,6 +47,8 @@ int shell_strlen(char *str)
 {
 	int len = 0;
 
+	if (str == NULL)
+		return (0);
 	while (str[len])
 	{
 		len++;
@@ -63,57 +58,40 @@ int shell_strlen(char *str)
 
 /**
  * shell_strcat - concatenate two strings
- * @str1: first input
- * @str2: second input
+ * @dest: first input
+ * @src: second input
  * Return: ptr to the new variable
 */
 char *shell_strcat(char *dest, char *src)
 {
 	char *result = dest;
 
-<<<<<<< HEAD
-	while (str1[len1])
-		len1++;
-	while (str2[len2])
-		len2++;
-	r = malloc(sizeof(char) * (len1 + len2 + 1));/*added 1 to solve the error*/
-	if (r == NULL)
-		return (NULL);
-	while (str1[i] != '\0')
-	{
-		r[i] = str1[i];
-		i++;
-	}
-	while (str2[j] != '\0')
-=======
-	while (*dest != '\0')
+	while (*dest)
 		dest++;
-	while (*src != '\0')
->>>>>>> a3df83e01b4e742745bcac2d7d6d24081d915d05
-	{
-		*dest = *src;
-		*dest++;
-		*src++;
-	}
-	*dest = '\0';
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
 	return (result);
 }
 
 /**
  * shell_strcpy - copy one string to onother
- * @src: string to be copied
- * @dest: returned value
+ * @dest: string to be copied
+ * @src: returned value
  *
  * Return: ptr to dest
 */
-char *shell_strcpy(char *src, char *dest)
+char *shell_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int n = 0;
 
-	while (src[i])
+	if (dest == src || src == 0)
+		return (dest);
+	while (src[n])
 	{
-		dest[i] = src[i];
-		i++;
+		dest[n] = src[n];
+		n++;
 	}
+	dest[n] = 0;
 	return (dest);
 }
