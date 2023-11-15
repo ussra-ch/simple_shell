@@ -52,9 +52,7 @@ int execute_command(char **commandArgs, char **argv, int idx)
 		perror("fork");
 		return (-1);
 	}
-	return (-1);
-}
-
+	
 /**
  * free_arr - function frees 2D arrays
  * @arr: input
