@@ -61,10 +61,10 @@ void free_arr(char **arr)
 
 	if (arr == NULL)
 		return;
-	while (arr[i])
+	while (arr[i] != '\0')
 	{
 		free(arr[i]);
 		i++;
 	}
-	/*free(arr);*/
+	free(arr);
 }
