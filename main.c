@@ -11,7 +11,7 @@ int main(int argc, char **argv) /*the same as they did in alx */
 {
 	char *line = NULL;
 	char **commandArgs = NULL;
-	int exitStatus = 0, idx = 0;
+	int exitStatus = 0/*, idx = 0*/;
 	(void) argc;
 
 	while (1)
@@ -29,11 +29,11 @@ int main(int argc, char **argv) /*the same as they did in alx */
 			free(line);
 			return (exitStatus);
 		}
-		idx++;
+		/*idx++;*/
 		commandArgs = split_line(line);
 		if (!commandArgs)
 			continue;
-		exitStatus = execute_command(commandArgs, argv, idx);
+		exitStatus = execute_command(commandArgs, argv); /*removed :idx*/
 		free(line);
 		free_arr(commandArgs);
 	}

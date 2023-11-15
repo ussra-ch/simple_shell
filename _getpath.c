@@ -27,8 +27,7 @@ char *_getpath(char *command)
 	if (!path_env)
 		return (NULL);
 	dir = strtok(path_env, ":");
-	/* example: /bin/ls*/
-	/* /bin = dir; / = 1; ls = command; \0 = 1*/
+	/* example: /bin/ls, /bin = dir; / = 1; ls = command; \0 = 1*/
 	full_cmd = malloc(sizeof(shell_strlen(dir) + shell_strlen(command) + 2));
 	if (full_cmd)
 	{
