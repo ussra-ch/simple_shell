@@ -5,7 +5,6 @@
  * of text from the standard input.
  * Return: the user's input line as a dynamically allocated string.
  */
-
 char *get_input_line(void)
 {
 	char *line = NULL;

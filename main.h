@@ -29,8 +29,13 @@ char *shell_strcat(char *dest, char *src); /* made */
 
 char *shell_strcpy(char *dest, char *src); /* made */
 char *shell_strdup(const char *str); /* made */
+<<<<<<< HEAD
 /*void shell_puts(char *str);
 int shell_putchar(char c);
+=======
+/* void shell_puts(char *str); */
+/* int shell_putchar(char c); */
+>>>>>>> a3df83e01b4e742745bcac2d7d6d24081d915d05
 
 char *shell_strncpy(char *dest, char *src, int n);
 char *shell_strncat(char *dest, char *src, int n);

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * shell_strdup - duplicate a string
  * @str: the input
@@ -66,12 +67,11 @@ int shell_strlen(char *str)
  * @str2: second input
  * Return: ptr to the new variable
 */
-char *shell_strcat(char *str1, char *str2)
+char *shell_strcat(char *dest, char *src)
 {
-	int i = 0, j = 0, len1 = 0, len2 = 0;
+	char *result = dest;
 
-	char *r;
-
+<<<<<<< HEAD
 	while (str1[len1])
 		len1++;
 	while (str2[len2])
@@ -85,12 +85,18 @@ char *shell_strcat(char *str1, char *str2)
 		i++;
 	}
 	while (str2[j] != '\0')
+=======
+	while (*dest != '\0')
+		dest++;
+	while (*src != '\0')
+>>>>>>> a3df83e01b4e742745bcac2d7d6d24081d915d05
 	{
-		r[i] = str2[j];
-		i++, j++;
+		*dest = *src;
+		*dest++;
+		*src++;
 	}
-	r[i] = '\0';
-	return (r);
+	*dest = '\0';
+	return (result);
 }
 
 /**
