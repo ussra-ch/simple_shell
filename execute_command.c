@@ -6,32 +6,14 @@
  * @argv: An array of strings representing the program arguments
  * Return: the exit status of the child process, -1 (error)
  */
-int execute_command(char **commandArgs, char **argv, int idx)
+int execute_command(char **commandArgs, char **argv)
 {
 	char *cmd;
-	char p[] = "PATH";
-	pid_t child;
-	int status, check;
 
-	check = shell_strcmp(commandArgs[0], p);
-	 /*check if the input is PATH for task 3*/
-	if (check == 0)
-	{
-		cmd = _getpath(commandArgs[0]);
-		if (!cmd)
-		{
-			print_error(argv[0], commandArgs[0], idx), free_arr(commandArgs);
-			return (0);
-		}
-	
-	 /*Check if the entered command is "exit"*/
-		if (shell_strcmp(commandArgs[0], "exit") == 0)
-		{
-			free(cmd);
-			free_arr(commandArgs);
-			return (0);
-		}
-	}
+	pid_t child;
+
+	int status;
+
 	child = fork();
 	if (child == 0)
 	{
@@ -52,7 +34,8 @@ int execute_command(char **commandArgs, char **argv, int idx)
 		perror("fork");
 		return (-1);
 	}
-	
+}
+
 /**
  * free_arr - function frees 2D arrays
  * @arr: input
