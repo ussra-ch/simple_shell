@@ -10,10 +10,12 @@
 int execute_command(char **commandArgs, char **argv, int idx)
 {
 	char *cmd;
+
 	pid_t child;
+
 	int status;
 
-	cmd = _getpath(commandArgs[0]);
+	cmd = get_path(commandArgs); /*it was cmd = get_path(commandArgs[0])*/
 	if (!cmd)
 	{
 		print_error(argv[0], commandArgs[0], idx);
@@ -23,7 +25,7 @@ int execute_command(char **commandArgs, char **argv, int idx)
 	/* Check if the entered command is "exit" */
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
 	{
-		free(cmd);
+		/*free(cmd);*/
 		free_arr(commandArgs);
 		return (0);
 	}

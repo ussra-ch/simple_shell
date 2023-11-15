@@ -9,11 +9,11 @@
  * otherwise NULL.
  */
 
-char *_getenv(char *variable)
+char *get_env(char *variable)
 {
-	char *tmp, *key, *value, *env;
-	int i;
+	char *tmp, *key, *val, *env;
 
+	int i;
 
 	for (i = 0; environ[i]; i++)
 	{
@@ -21,12 +21,12 @@ char *_getenv(char *variable)
 		key = strtok(tmp, "=");
 		if (shell_strcmp(key, variable) == 0)
 		{
-			value = strtok(NULL, "\n");
-			env = shell_strdup(value);
+			val = strtok(NULL, "\n");
+			env = shell_strdup(val);
 			free(tmp);
 			return (env);
 		}
-		free(tmp), tmp = NULL;
+		free(tmp);
 	}
 	return (NULL);
 }

@@ -7,6 +7,7 @@
 char *shell_strdup(const char *str)
 {
 	char *ptr;
+	
 	int i, len = 0;
 
 	if (str == NULL)
@@ -23,7 +24,6 @@ char *shell_strdup(const char *str)
 		ptr[i] = str[i];
 	/* Add null terminator to the end of the duplicated string */
 	ptr[len] = '\0';
-
 	return (ptr);
 }
 

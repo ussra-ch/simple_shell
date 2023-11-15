@@ -39,9 +39,8 @@ char *shell_strchr(char *s, char c);
 char **str_tokenize(char *str, const char *d);
 char **str_tokenize_single(char *str, char del);
 
-/* yousra's funtions*/
-char *_getenv(char *variable);
-char *_getpath(char *command);
+char *get_env(char *variable);
+char *get_path(char *command);
 char *str_int(int n);
 void shell_reverse(char *str, int len);
 void print_error(char *file_name, char *cmd, int i);
