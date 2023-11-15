@@ -20,7 +20,7 @@ char *get_input_line(void)
 		free(line);
 		return (NULL);
 	}
-	if (nread > 0 && line[nread - 1] == '\n')
+	if (line[nread - 1] == '\n')
 		line[nread - 1] = '\0';
 
 	return (line);
