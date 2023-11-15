@@ -22,7 +22,7 @@ int execute_command(char **commandArgs, char **argv, int idx)
 	/* Check if the entered command is "exit" */
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
 	{
-		/*free(cmd);*/
+		free(cmd);
 		free_arr(commandArgs);
 		return (0);
 	}
@@ -64,5 +64,5 @@ void free_arr(char **arr)
 		free(arr[i]);
 		i++;
 	}
-	/*free(arr);*/
+	free(arr);
 }
