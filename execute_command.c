@@ -3,8 +3,7 @@
 /**
  * execute_command - function that execute the commands
  * @commandArgs: array of string reprsenting the command given
- * @argv: An array of strings representing the program arguments.
- * @idx: An integer representing the index of the executed command
+ * @argv: An array of strings representing the program arguments
  * Return: the exit status of the child process, -1 (error)
  */
 int execute_command(char **commandArgs, char **argv) /*yousra removes int idx*/
