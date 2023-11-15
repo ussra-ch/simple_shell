@@ -7,29 +7,25 @@
  * @idx: An integer representing the index of the executed command
  * Return: the exit status of the child process, -1 (error)
  */
-int execute_command(char **commandArgs, char **argv)/* removed , int idx*/
+int execute_command(char **commandArgs, char **argv) /*yousra removes int idx*/
 {
 	/*char *cmd;*/
-
 	pid_t child;
-
 	int status;
 
-	if (commandArgs == NULL || argv == NULL)
-		return (-1);
 	/*cmd = _getpath(commandArgs[0]);
 	if (!cmd)
 	{
 		print_error(argv[0], commandArgs[0], idx), free_arr(commandArgs);
 		return (0);
-	}*/
-	/* Check if the entered command is "exit" */
+	}
+	 Check if the entered command is "exit" 
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
 	{
-		/*free(cmd);*/
+		free(cmd);
 		free_arr(commandArgs);
 		return (0);
-	}
+	}*/
 	child = fork();
 	if (child == 0)
 	{
@@ -68,5 +64,5 @@ void free_arr(char **arr)
 		free(arr[i]);
 		i++;
 	}
-	/*free(arr);*/
+	free(arr);
 }
