@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
- * get_path - Retrieves the full path of a command.
+ * _getpath - Retrieves the full path of a command.
  * @command: Pointer to a string representing the
  * command to retrieve the full path for.
  *
  * Return: Pointer to the full path of the
  * command on success, otherwise NULL.
  */
-
 char *_getpath(char *command)
 {
 	char *path_env, *full_cmd, *dir;

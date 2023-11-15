@@ -7,7 +7,6 @@
  *
  * Return: 0 Always (success)
  */
-
 int main(int argc, char **argv) /*the same as they did in alx */
 {
 	char *line = NULL;
