@@ -9,7 +9,7 @@
  * command on success, otherwise NULL.
  */
 
-char *get_path(char *command)
+char *_getpath(char *command)
 {
 	char *path_env, *full_cmd, *dir;
 	struct  stat st;
@@ -24,7 +24,7 @@ char *get_path(char *command)
 			return (NULL);
 		}
 	}
-	path_env = get_env("PATH");
+	path_env = _getenv("PATH");
 	if (!path_env)
 		return (NULL);
 	dir = strtok(path_env, ":");

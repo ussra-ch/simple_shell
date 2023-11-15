@@ -7,11 +7,12 @@
 char **split_line(char *line)
 {
 	char *token = NULL, *tmp = NULL, **command = NULL;
+
 	int count = 0, i = 0, j = 0;
 
 	if (line == NULL)
 		return (NULL);
-	tmp = shell_strdup(line), token = strtok(tmp, EX); /*changed the strdup function by shell_strdup*/
+	tmp = shell_strdup(line), token = strtok(tmp, EX);
 	if (token == NULL)
 	{
 		free(tmp);

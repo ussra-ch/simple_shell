@@ -15,12 +15,11 @@ int execute_command(char **commandArgs, char **argv, int idx)
 
 	int status;
 
-	cmd = get_path(commandArgs); /*it was cmd = get_path(commandArgs[0])*/
+	cmd = _getpath(commandArgs[0]); /*it was cmd = get_path(commandArgs[0])*/
 	if (!cmd)
 	{
-		print_error(argv[0], commandArgs[0], idx);
-		free_arr(commandArgs);
-		return (-1);
+		print_error(argv[0], commandArgs[0], idx), free_arr(commandArgs);
+		return (0);
 	}
 	/* Check if the entered command is "exit" */
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
@@ -67,5 +66,5 @@ void free_arr(char **arr)
 		free(arr[i]);
 		i++;
 	}
-	free(arr);
+	/*free(arr);*/
 }

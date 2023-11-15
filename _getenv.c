@@ -9,7 +9,7 @@
  * otherwise NULL.
  */
 
-char *get_env(char *variable)
+char *_getenv(char *variable)
 {
 	char *tmp, *key, *val, *env;
 

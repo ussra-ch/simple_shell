@@ -7,7 +7,7 @@
 char *shell_strdup(const char *str)
 {
 	char *ptr;
-	
+
 	int i, len = 0;
 
 	if (str == NULL)
@@ -16,7 +16,7 @@ char *shell_strdup(const char *str)
 	while (str[len])
 		len++;
 	/* Allocate memory for the new string (+1 for null terminator) */
-	ptr = malloc(sizeof(char) * (len + 1));
+	ptr = malloc(sizeof(char) * (len)); /*it was len+1*/
 	if (ptr == NULL)
 		return (NULL);
 	/* Copy characters from str to ptr */
@@ -76,7 +76,7 @@ char *shell_strcat(char *str1, char *str2)
 		len1++;
 	while (str2[len2])
 		len2++;
-	r = malloc(sizeof(char) * (len1 + len2));
+	r = malloc(sizeof(char) * (len1 + len2 + 1));/*added 1 to solve the error*/
 	if (r == NULL)
 		return (NULL);
 	while (str1[i] != '\0')
