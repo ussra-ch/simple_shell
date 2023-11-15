@@ -59,7 +59,7 @@ int execute_command(char **commandArgs, char **argv) /* , char **argv, int idx*/
     if (pid == -1) {
         perror("fork");
         exit(EXIT_FAILURE);
-    } else if (pid == 0) { // Child process
+    } else if (pid == 0) { /* Child process */
         char *args[64];
         int i = 0;
 
@@ -72,26 +72,26 @@ int execute_command(char **commandArgs, char **argv) /* , char **argv, int idx*/
 
         args[i] = NULL;
 
-        // Check if the command includes a path separator '/'
+        /* Check if the command includes a path separator '/' */
         if (strchr(args[0], '/') != NULL) {
-            // If it does, try to execute it directly
+            /* If it does, try to execute it directly */
             execv(args[0], args);
             perror("execv");
             exit(EXIT_FAILURE);
         }
-// Get the PATH environment variable
+	/* Get the PATH environment variable */
 		pa = _getenv("PATH");
         if (pa == NULL) {
             perror("_getenv");
             exit(EXIT_FAILURE);
         }
-        // Tokenize the PATH
+        /* Tokenize the PATH */
         dir = strtok(pa, ":");
         while (dir != NULL) {
-            // Construct the full path to the executable
-            char full_path[256]; // Adjust the size accordingly
+            /* Construct the full path to the executable */
+            char full_path[256]; /* Adjust the size accordingly */
             snprintf(full_path, sizeof(full_path), "%s/%s", dir, args[0]);
-            // Check if the executable exists
+            /* Check if the executable exists */
             if (access(full_path, X_OK) == 0) {
                 execv(full_path, args);
                 perror("execv");
@@ -99,12 +99,12 @@ int execute_command(char **commandArgs, char **argv) /* , char **argv, int idx*/
             }
             dir = strtok(NULL, ":");
         }
-        // If the loop completes, the executable was not found
-        //fprintf(stderr, "Command not found: %s\n", args[0]);
+        /* If the loop completes, the executable was not found */
+        /* fprintf(stderr, "Command not found: %s\n", args[0]); */
 		if (execve(commandArgs[0], commandArgs, environ) == -1)
 			perror(argv[0]);
         exit(EXIT_FAILURE);
-    } else { // Parent proces
+    } else { /* Parent proces */
         return (waitpid(pid, &status, 0));
     }
 }
