@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * shell_strdup - duplicate a string
  * @str: the input
