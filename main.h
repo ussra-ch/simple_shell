@@ -30,7 +30,7 @@ char *shell_strcat(char *dest, char *src); /* made */
 char *shell_strcpy(char *dest, char *src); /* made */
 char *shell_strdup(const char *str); /* made */
 
-/*void shell_puts(char *str); */
+/* void shell_puts(char *str); */
 int shell_putchar(char c);
 /* void shell_puts(char *str); */
 
@@ -41,7 +41,7 @@ char *shell_strchr(char *s, char c);
 char **str_tokenize(char *str, const char *d);
 char **str_tokenize_single(char *str, char del);
 
-char *_getenv(char *variable);
+char *_getenv(char *variable)
 char *_getpath(char *command);
 char *str_int(int n);
 void shell_reverse(char *str, int len);
