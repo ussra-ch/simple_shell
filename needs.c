@@ -67,31 +67,20 @@ int shell_strlen(char *str)
  * @str2: second input
  * Return: ptr to the new variable
 */
-char *shell_strcat(char *str1, char *str2)
+char *shell_strcat(char *dest, char *src)
 {
-	int i = 0, j = 0, len1 = 0, len2 = 0;
+	char *result = dest;
 
-	char *r;
-
-	while (str1[len1])
-		len1++;
-	while (str2[len2])
-		len2++;
-	r = malloc(sizeof(char) * (len1 + len2));
-	if (r == NULL)
-		return (NULL);
-	while (str1[i] != '\0')
+	while (*dest != '\0')
+		dest++;
+	while (*src != '\0')
 	{
-		r[i] = str1[i];
-		i++;
+		*dest = *src;
+		*dest++;
+		*src++;
 	}
-	while (str2[j] != '\0')
-	{
-		r[i] = str2[j];
-		i++, j++;
-	}
-	r[i] = '\0';
-	return (r);
+	*dest = '\0';
+	return (result);
 }
 
 /**
