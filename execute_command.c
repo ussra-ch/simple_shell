@@ -13,19 +13,21 @@ int execute_command(char **commandArgs, char **argv) /*yousra removes int idx*/
 	pid_t child;
 	int status;
 
-	/*cmd = _getpath(commandArgs[0]);
-	if (!cmd)
-	{
-		print_error(argv[0], commandArgs[0], idx), free_arr(commandArgs);
-		return (0);
-	}
-	 Check if the entered command is "exit" 
+	/*
+	*cmd = _getpath(commandArgs[0]);
+	*if (!cmd)
+	*{
+	*	print_error(argv[0], commandArgs[0], idx), free_arr(commandArgs);
+	*	return (0);
+	*}
+	*/
+	 /*Check if the entered command is "exit"*/
 	if (shell_strcmp(commandArgs[0], "exit") == 0)
 	{
-		free(cmd);
+		/*free(cmd);*/
 		free_arr(commandArgs);
 		return (0);
-	}*/
+	}
 	child = fork();
 	if (child == 0)
 	{
