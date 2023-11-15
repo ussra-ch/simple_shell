@@ -1,4 +1,4 @@
-#include "main.h" /*checked, is not the reason of the error*/
+#include "main.h"
 /**
 * split_line - function that sptilts the line into words
 * @line: ptr to the line
@@ -7,7 +7,6 @@
 char **split_line(char *line)
 {
 	char *token = NULL, *tmp = NULL, **command = NULL;
-
 	int count = 0, i = 0, j = 0;
 
 	if (line == NULL)
@@ -33,7 +32,7 @@ char **split_line(char *line)
 	token = strtok(line, EX);
 	while (token)
 	{
-		command[j] = shell_strdup(token); /* changed strdup by shell_strdup*/
+		command[j] = shell_strdup(token);
 		if (command[j] == NULL)
 		{
 			free(tmp);
