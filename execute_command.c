@@ -34,6 +34,7 @@ int execute_command(char **commandArgs, char **argv)
 		perror("fork");
 		return (-1);
 	}
+	return
 }
 
 /**
