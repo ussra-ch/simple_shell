@@ -8,10 +8,7 @@
  */
 int execute_command(char **commandArgs, char **argv)
 {
-	char *cmd;
-
 	pid_t child;
-
 	int status;
 
 	child = fork();
@@ -34,7 +31,11 @@ int execute_command(char **commandArgs, char **argv)
 		perror("fork");
 		return (-1);
 	}
+<<<<<<< HEAD
 	return
+=======
+	return (waitpid(child, &status, 0));
+>>>>>>> 419dc4b6d923f26d0f1a30e5887f250881c96d8e
 }
 
 /**
